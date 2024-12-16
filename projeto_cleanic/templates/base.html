@@ -41,7 +41,17 @@
           <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
               <li><a href="{% url 'accounts:index' %}">Minha Conta</a></li>
-              <li><a href="{% url 'accounts:logout' %}">Sair</a></li>
+              <li>
+                <a href="#" 
+                  onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                >
+                  Sair
+                </a>
+
+                <form id="logout-form" action="{% url 'accounts:logout' %}" method="post">
+                  {% csrf_token %}
+                </form>
+              </li>
             {% else %}
               <li><a href="{% url 'accounts:login' %}">Entrar</a></li>
               <li><a href="{% url 'accounts:register' %}">Registro</a></li>
