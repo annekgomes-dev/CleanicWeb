@@ -1,9 +1,37 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 {% block container %}
+{% load static %}
+
+<div>
+    <div class="container-home">
+        <img src="{% static 'bg-home-page.jpg' %}" alt="bg-home">
+    </div>
 
     <div class="jumbotron page-header">
-        <h1>Cleanic Web </h1>
-        <p> Este software foi desenvolvido para otimizar a gestão de clínicas odontológicas, proporcionando uma experiência mais eficiente e organizada 
-            para dentistas, pacientes e equipes administrativas. Com uma interface intuitiva, oferece funcionalidades essenciais, como o cadastro completo 
-            de pacientes, profissionais de saúde e especialidades odontológicas, além de um sistema integrado para agendamento de consultas.</p>
+        <h1>Cleanic Web</h1>
+        <p style="margin-top: 30px;">
+            Este software foi desenvolvido para otimizar a gestão de clínicas odontológicas. <br/>
+            Com tecnologia de ponta, Cleanic Web é ideal para consultórios odontológicos equipados.<br/>
+            Transforme a experiência dos seus pacientes com gestão e conforto integrados.
+        </p>
+        <p><a class="btn btn-primary btn-lg" href="/clientes/consultas/criar/" role="button" style="margin-top: 30px;">Agende sua Consulta</a></p>
+    </div>
+</div>
+
+<style>
+    .container-home {
+        display: flex;  /* Usa flexbox para centralizar o conteúdo */
+        justify-content: center;  /* Centraliza horizontalmente */
+        align-items: center;  /* Centraliza verticalmente */
+        height: 200px;  /* Define a altura do container */
+        overflow: hidden;
+    }
+
+    .container-home img {
+        max-width: 100%;  /* A imagem pode ocupar no máximo 100% da largura da div */
+        height: auto;  /* Mantém a proporção da imagem */
+    }
+
+</style>
+
 {% endblock %}
